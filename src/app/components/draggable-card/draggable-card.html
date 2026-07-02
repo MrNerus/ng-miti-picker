@@ -1,0 +1,17 @@
+<div class="card-container" [style.left.px]="x()" [style.top.px]="y()" [class.dragging]="isDragging()">
+
+  <div class="drag-handle" (pointerdown)="onPointerDown($event)">
+    <div class="handle-grip">
+      <!--long pill shaped svg  -->
+      <svg width="24" height="4" viewBox="0 0 24 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M2 2C2 1.46957 2.21071 0.960859 2.58579 0.585786C2.96086 0.210714 3.46957 0 4 0H20C20.5304 0 21.0391 0.210714 21.4142 0.585786C21.7893 0.960859 22 1.46957 22 2C22 2.53043 21.7893 3.03914 21.4142 3.41421C21.0391 3.78929 20.5304 4 20 4H4C3.46957 4 2.96086 3.78929 2.58579 3.41421C2.21071 3.03914 2 2.53043 2 2Z"
+          fill="currentColor" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

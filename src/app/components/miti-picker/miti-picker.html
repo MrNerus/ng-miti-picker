@@ -1,0 +1,25 @@
+<div class="datepicker-container">
+    <!-- Input box acting as the trigger -->
+    <button type="text" [value]="formattedNepaliDate" placeholder="YYYY-MM-DD (BS)"
+        popovertarget="nepali-calendar-popover">Calander</button>
+
+    <!-- The Calendar Popup in the Top Layer -->
+    <div id="nepali-calendar-popover" popover class="calendar-card">
+        <div class="calendar-header">
+            <!-- Your custom month/year navigation buttons -->
+            <button (click)="prevMonth()">‹</button>
+            <span>{{ currentNepaliMonthName }} {{ currentNepaliYear }}</span>
+            <button (click)="nextMonth()">›</button>
+        </div>
+
+        <!-- Render your custom 7x6 bikram sambat grid grid -->
+        <div class="calendar-grid">
+            @for (day of calendarDays; track day.dateString) {
+            <button [class.active]="isSelected(day)" [disabled]="day.isCurrentMonth === false"
+                (click)="selectDate(day)">
+                {{ day.nepaliDayNumber }}
+            </button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+.card-container {
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  user-select: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-container:hover {
+  border-color: #8888;
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 12px 12px -5px rgba(0, 0, 0, 0.4);
+}
+
+.card-container.dragging {
+  cursor: grabbing;
+  box-shadow: 0 30px 40px -5px rgba(0, 0, 0, 0.5), 0 15px 15px -5px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  border-color: #888c;
+}
+
+.drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-bottom: 1px solid #888;
+  cursor: grab;
+  touch-action: none;
+}
+
+.card-container.dragging .drag-handle {
+  cursor: grabbing;
+}
+
+.handle-grip {
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.card-container.dragging .handle-grip {
+  color: #6366f1;
+}
+
+.card-body {
+  padding: 20px;
+}

@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.calendar-card {
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calander-card:popover-open {
+    margin: 0;
+    inset: 0;
+}
