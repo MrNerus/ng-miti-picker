@@ -13,7 +13,7 @@
         </div>
 
         <!-- Render your custom 7x6 bikram sambat grid grid -->
-        <div class="calendar-grid">
+        <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(6, 1fr);">
             @for (day of calendarDays; track day.dateString) {
             <button [class.active]="isSelected(day)" [disabled]="day.isCurrentMonth === false"
                 (click)="selectDate(day)">
